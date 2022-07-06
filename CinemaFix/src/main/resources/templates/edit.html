@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://tymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>Update article</title>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}">
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="col-md-4 col-xs-8">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Modify city</div>
+					<div class="panel-body">
+						<form th:action="@{/save}" method="POST" th:object="${city}">
+
+							<div class="form-group">
+								<label class="control-label">Id : </label> <label
+									th:text=${city.id}></label> <input class="form-control"
+									type="hidden" name="id" th:value="${city.id}">
+							</div>
+
+							<div class=" form-group">
+								<label class="control-label">Address</label> <input
+									class="form-control" type="text" name="address"
+									th:value="${city.address}"> <span
+									th:errors="${city.address}"></span>
+							</div>
+							<div class=" form-group">
+								<label class="control-label">Name</label> <input
+									class="form-control" type="text" name="name"
+									th:value="${city.name}"> <span
+									th:errors="${city.name}"></span>
+							</div>
+							
+							<div class="from-group">
+								<label class="control-label">Cinema</label> <select
+									class="form-control" name="cinema"
+									th:value="${city.cinema}">
+									<option th:each="c:${listCinema}" th:text="${c.country}"
+										th:value="${c.id}"></option>
+								</select>
+							</div>
+
+
+						
+							<div class="form-group">
+								<label class="control-label">Picture</label> <select
+									class="form-control" name="image" th:value="${city.image}">
+									<option th:each="a:${listCity}" th:text="${a.image}" th:value="${a.image}">
+									</option>
+								</select>
+							</div>
+
+							<button type="submit" class="btn btn-primary">Save</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>
