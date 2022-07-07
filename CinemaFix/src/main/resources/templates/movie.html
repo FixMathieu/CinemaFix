@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://tymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout"
+	xmlns:sec="http://ww.thymeleaf.org/extras/spring-security5">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/css/styles.css"
+	th:href="@{css/styles.css}">
+<title>The city</title>
 </head>
 <body>
+	<div layout:fragment="content">
+		<div class="container">
+			<div class="titleMovie">
+				<div th:text="${city.cinema.country}"></div>
+			</div>
+			<div class="titleMovie">
+				<div th:text="${city.name}"></div>
+			</div>
+			
+				<div class="titleMovieD">
+					<tr th:each="c:${listMovieCity}">
 
+						<th th:if="${c.city.id}==${city.id}"><a style="color: red"
+							th:text="${c.movie.name}"> </a></th>
+					</tr>
+				</div>
+				<div class="titleMovieD">
+					<tr th:each="c:${listMovieCity}">
+						<th th:if="${c.city.id}==${city.id}"><a><img
+								class="pictureArticles" style="width: 100px;" alt="image"
+								src="../static/images/+${c.movie.image}"
+								th:src="@{${'/images/'+c.movie.image}}" width="40px" /></a></th>
+
+					</tr>
+				</div>
+
+			
+
+
+			<div class="cube" style="padding: 50px;">
+				<div>
+					<ul id="btnHome" class="nav navbar-nav"
+						style="background-color: red;">
+						<li class="active"><a th:href="@{/cities}"
+							style="color: white;">City List</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -48,13 +48,13 @@ public String delete(Long id, int page, String keyword) {
 }
 
 @GetMapping("/city")
-public String article(Model model) {
+public String cinema(Model model) {
 	nameAuth(model);
 	List<City> cities = cityRepository.findAll();
 	model.addAttribute("listCity", cities);
-	List<Cinema> cinema = cinemaRepository.findAll();
-	model.addAttribute("listCinema", cinema);
-	model.addAttribute("city", new City());
+	List<Cinema> cinemas = cinemaRepository.findAll();
+	model.addAttribute("listCinema", cinemas);
+	model.addAttribute("cinema", new Cinema());
 	return "city";
 }
 

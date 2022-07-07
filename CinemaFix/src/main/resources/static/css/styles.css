@@ -26,3 +26,23 @@ footer {
 	height: 50px;
 	width: 15px;
 }
+.titleMovie{
+	display:flex;
+	justify-content:center;
+	
+}
+.titleMovie div{
+	font-size:30px;
+	color:red;
+}
+.titleMovieD{
+	display:flex;
+	justify-content:space-around;
+	padding:10px;
+	margin:10px;
+	
+}
+.titleMovieD tr th a{
+	font-size:30px;
+	color:red;
+}

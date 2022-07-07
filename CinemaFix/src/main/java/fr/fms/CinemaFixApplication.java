@@ -24,7 +24,7 @@ public class CinemaFixApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		businessImpl.generateValues();
+	//businessImpl.generateValues();
 	}
 	
 

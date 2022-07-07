@@ -54,9 +54,9 @@
 			</div>
 			<table class="table">
 				<tr bgcolor="red" style="color: white">
-					<th>Cinema</th>
+					<th>City</th>
 
-					<th>Name</th>
+					<th>Cinema</th>
 					<th>Address</th>
 
 					<th sec:authorize="hasRole('ROLE_ADMIN')">Action(s)</th>
@@ -68,7 +68,7 @@
 						src="../static/images/+${a.image}"
 						th:src="@{${'/images/'+a.image}}" width="40px" /></td>
 					<td><a style="color: red" th:text=${a.name}
-						th:href="@{/movie}"></a></td>
+						th:href="@{/movie(id=${a.id})}"></a></td>
 					<td th:text="${a.address}"></td>
 
 

@@ -23,14 +23,14 @@ background-size: cover;">
 			<ul class="nav navbar-nav">
 				<li class="active"><a th:href="@{/city}"style="padding:0px"></a></li>
 				<li><a style="color:red" th:href="@{/cities}">City List</a></li>
-				<li><a style="color:red" th:href="@{/cinema}">Cinema</a></li>						
+<!-- 				<li><a style="color:red" th:href="@{/cinema}">Cinema</a></li>						 -->
 			
-				<li><a th:href="@{/reservation}" sec:authorize="isAuthenticated()"> Reservation</a></li>
+				<li><a style="color:red"  th:href="@{/reservation}" sec:authorize="isAuthenticated()"> Reservation</a></li>
 			</ul>
 		
 			<ul class="nav navbar-nav pull-right">
-			<li><a id="btnAddArticle" class="btn btn-success" th:href="@{/cinema}" sec:authorize="hasRole('ROLE_ADMIN')"style="color:white"> Add City</a></li>
-			<li><a id="btnAddArticle" class="btn btn-success" th:href="@{/city}" sec:authorize="hasRole('ROLE_ADMIN')"style="color:white"> Add Cinema</a></li>
+			<li><a id="btnAddArticle" class="btn btn-success" th:href="@{/city}" sec:authorize="hasRole('ROLE_ADMIN')"style="color:white"> Add City</a></li>
+			<li><a id="btnAddArticle" class="btn btn-success" th:href="@{/cinema}" sec:authorize="hasRole('ROLE_ADMIN')"style="color:white"> Add Cinema</a></li>
 			<li><a style="color:red" th:href="@{/login}" sec:authorize="!isAuthenticated()">Login</a></li>
 			<li class="authName" style="color:white" sec:authorize="isAuthenticated()">Hello :</li>
 			<li class="authName" style="color:white"  sec:authorize="isAuthenticated()" th:text="${auth}"></li>
@@ -47,8 +47,8 @@ background-size: cover;">
 <footer>
 
   <div class="text-white text-center p-3" style="background-color:rgba(0, 0, 0, 0.5); color: white">
-  <h3 style="color:  rgba(85, 249, 236)">CineFix</h3>
-  <div class="titleNameFooter"><p id="logoFoot" style="color:  rgba(85, 249, 236)">CineFix </p> is an CineFixOnLine created by MathieuFIx</div>
+  <h3 style="color:  red">CineFix</h3>
+  <div class="titleNameFooter"><p id="logoFoot" style="color:  red">CineFix </p> is an CineFixOnLine created by MathieuFIx</div>
     © 2022 Copyright:
     <a>MFIX</a>
   </div>

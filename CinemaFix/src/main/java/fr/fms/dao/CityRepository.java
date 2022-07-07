@@ -17,5 +17,6 @@ public interface CityRepository extends JpaRepository<City, Long> {
 	Page<City>findByCinemaId(long cinemaId,Pageable pageable);
 	List<City>findByNameContains(String string);
 	Page<City> findByAddressContains(String address, Pageable pageable);
+//	List<City> findById();
 	
 }
