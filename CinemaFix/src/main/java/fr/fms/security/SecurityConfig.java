@@ -1,5 +1,5 @@
 package fr.fms.security;
-
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,23 +8,22 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import javax.sql.DataSource;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
 import javax.servlet.ServletException;
-import javax.sql.DataSource;
+
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-//	@Autowired
-//	BCryptPasswordEncoder bCryptPasswordEncoder;
+
 	
 	@Autowired
 	DataSource dataSource;
@@ -38,10 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		PasswordEncoder pe = passwordEncoder();
 
-		// *si* mémoire interne :
-//		auth.inMemoryAuthentication().withUser("Mathieu").password(pe.encode("fms2022")).roles("ADMIN","USER");	
-//		auth.inMemoryAuthentication().withUser("Eric").password(pe.encode("fms2022")).roles("USER");
-//		auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder());
 		
 		// *si* BDD :
 		auth.jdbcAuthentication()

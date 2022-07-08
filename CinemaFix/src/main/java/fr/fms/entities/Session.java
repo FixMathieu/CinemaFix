@@ -1,6 +1,6 @@
 package fr.fms.entities;
 
-import java.sql.Date;
+
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

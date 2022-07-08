@@ -2,16 +2,12 @@ package fr.fms.business;
 
 import java.util.HashMap;
 import java.util.List;
-
 import javax.annotation.PostConstruct;
-
-import org.hibernate.transform.AliasToEntityMapResultTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import fr.fms.security.SecurityConfig;
 import fr.fms.dao.CinemaRepository;
 import fr.fms.dao.CityRepository;
@@ -252,6 +248,11 @@ public class IBusinessImpl implements IBusiness {
 	public void updateCinema(long id, String country) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public Object great() {
+		
+		return "Hello World";
 	}
 
 }
